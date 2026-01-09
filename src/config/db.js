@@ -1,27 +1,22 @@
-import PrismaClient from '@prisma/client';
+import { PrismaClient } from '../generated/client.ts';
 import dotenv from 'dotenv';
-// prismaclient is used for autocompletion and recognition of what 
-// the table and columns in database(neon) are. 
 
-const prisma = new PrismaClient({
-    log:process.env.NODE_ENV==="development"?
-    ['query','warn','error']:
-    ['error']
-});
+dotenv.config();
 
-const connectDB=async()=>{
-    try {
-        await prisma.$connectDB()
-        console.log("Database connected sucessfully using prisma")
-        
-    } catch (error) {
-        console.log(`Database connection failed ${error.message}`);
-        process.exit(1);
-    }
-}
+const prisma = new PrismaClient();
 
-const disconnectDB=async()=>{
-    await prisma.$disconnect();
-}
+const connectDB = async () => {
+  try {
+    await prisma.$connect();
+    console.log('Database connected successfully using Prisma');
+  } catch (error) {
+    console.error('Database connection failed:', error.message);
+    process.exit(1);
+  }
+};
 
-export {prisma,connectDB,disconnectDB};
+const disconnectDB = async () => {
+  await prisma.$disconnect();
+};
+
+export { prisma, connectDB, disconnectDB };
