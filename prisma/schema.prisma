@@ -5,7 +5,9 @@ generator client {
 
 datasource db {
   provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
+
 
 model Movie {
   id          Int         @id @default(autoincrement())
@@ -27,8 +29,6 @@ model User {
   email      String      @unique
   name       String
   password   String
-  createdAt  DateTime    @default(now())
-  updatedAt  DateTime    @updatedAt
   movies     Movie[]     @relation("MovieCreator")
   watchlists Watchlist[]
 }

@@ -29,8 +29,6 @@ export type UserMinAggregateOutputType = {
   email: string | null
   name: string | null
   password: string | null
-  createdAt: Date | null
-  updatedAt: Date | null
 }
 
 export type UserMaxAggregateOutputType = {
@@ -38,8 +36,6 @@ export type UserMaxAggregateOutputType = {
   email: string | null
   name: string | null
   password: string | null
-  createdAt: Date | null
-  updatedAt: Date | null
 }
 
 export type UserCountAggregateOutputType = {
@@ -47,8 +43,6 @@ export type UserCountAggregateOutputType = {
   email: number
   name: number
   password: number
-  createdAt: number
-  updatedAt: number
   _all: number
 }
 
@@ -58,8 +52,6 @@ export type UserMinAggregateInputType = {
   email?: true
   name?: true
   password?: true
-  createdAt?: true
-  updatedAt?: true
 }
 
 export type UserMaxAggregateInputType = {
@@ -67,8 +59,6 @@ export type UserMaxAggregateInputType = {
   email?: true
   name?: true
   password?: true
-  createdAt?: true
-  updatedAt?: true
 }
 
 export type UserCountAggregateInputType = {
@@ -76,8 +66,6 @@ export type UserCountAggregateInputType = {
   email?: true
   name?: true
   password?: true
-  createdAt?: true
-  updatedAt?: true
   _all?: true
 }
 
@@ -158,8 +146,6 @@ export type UserGroupByOutputType = {
   email: string
   name: string
   password: string
-  createdAt: Date
-  updatedAt: Date
   _count: UserCountAggregateOutputType | null
   _min: UserMinAggregateOutputType | null
   _max: UserMaxAggregateOutputType | null
@@ -188,8 +174,6 @@ export type UserWhereInput = {
   email?: Prisma.StringFilter<"User"> | string
   name?: Prisma.StringFilter<"User"> | string
   password?: Prisma.StringFilter<"User"> | string
-  createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"User"> | Date | string
   movies?: Prisma.MovieListRelationFilter
   watchlists?: Prisma.WatchlistListRelationFilter
 }
@@ -199,8 +183,6 @@ export type UserOrderByWithRelationInput = {
   email?: Prisma.SortOrder
   name?: Prisma.SortOrder
   password?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
   movies?: Prisma.MovieOrderByRelationAggregateInput
   watchlists?: Prisma.WatchlistOrderByRelationAggregateInput
 }
@@ -213,8 +195,6 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.UserWhereInput | Prisma.UserWhereInput[]
   name?: Prisma.StringFilter<"User"> | string
   password?: Prisma.StringFilter<"User"> | string
-  createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"User"> | Date | string
   movies?: Prisma.MovieListRelationFilter
   watchlists?: Prisma.WatchlistListRelationFilter
 }, "id" | "email">
@@ -224,8 +204,6 @@ export type UserOrderByWithAggregationInput = {
   email?: Prisma.SortOrder
   name?: Prisma.SortOrder
   password?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
   _count?: Prisma.UserCountOrderByAggregateInput
   _max?: Prisma.UserMaxOrderByAggregateInput
   _min?: Prisma.UserMinOrderByAggregateInput
@@ -239,8 +217,6 @@ export type UserScalarWhereWithAggregatesInput = {
   email?: Prisma.StringWithAggregatesFilter<"User"> | string
   name?: Prisma.StringWithAggregatesFilter<"User"> | string
   password?: Prisma.StringWithAggregatesFilter<"User"> | string
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"User"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"User"> | Date | string
 }
 
 export type UserCreateInput = {
@@ -248,8 +224,6 @@ export type UserCreateInput = {
   email: string
   name: string
   password: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
   movies?: Prisma.MovieCreateNestedManyWithoutCreatorInput
   watchlists?: Prisma.WatchlistCreateNestedManyWithoutUserInput
 }
@@ -259,8 +233,6 @@ export type UserUncheckedCreateInput = {
   email: string
   name: string
   password: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
   movies?: Prisma.MovieUncheckedCreateNestedManyWithoutCreatorInput
   watchlists?: Prisma.WatchlistUncheckedCreateNestedManyWithoutUserInput
 }
@@ -270,8 +242,6 @@ export type UserUpdateInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   movies?: Prisma.MovieUpdateManyWithoutCreatorNestedInput
   watchlists?: Prisma.WatchlistUpdateManyWithoutUserNestedInput
 }
@@ -281,8 +251,6 @@ export type UserUncheckedUpdateInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   movies?: Prisma.MovieUncheckedUpdateManyWithoutCreatorNestedInput
   watchlists?: Prisma.WatchlistUncheckedUpdateManyWithoutUserNestedInput
 }
@@ -292,8 +260,6 @@ export type UserCreateManyInput = {
   email: string
   name: string
   password: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
 }
 
 export type UserUpdateManyMutationInput = {
@@ -301,8 +267,6 @@ export type UserUpdateManyMutationInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type UserUncheckedUpdateManyInput = {
@@ -310,8 +274,6 @@ export type UserUncheckedUpdateManyInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type UserScalarRelationFilter = {
@@ -324,8 +286,6 @@ export type UserCountOrderByAggregateInput = {
   email?: Prisma.SortOrder
   name?: Prisma.SortOrder
   password?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
 }
 
 export type UserMaxOrderByAggregateInput = {
@@ -333,8 +293,6 @@ export type UserMaxOrderByAggregateInput = {
   email?: Prisma.SortOrder
   name?: Prisma.SortOrder
   password?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
 }
 
 export type UserMinOrderByAggregateInput = {
@@ -342,8 +300,6 @@ export type UserMinOrderByAggregateInput = {
   email?: Prisma.SortOrder
   name?: Prisma.SortOrder
   password?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
 }
 
 export type UserCreateNestedOneWithoutMoviesInput = {
@@ -379,8 +335,6 @@ export type UserCreateWithoutMoviesInput = {
   email: string
   name: string
   password: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
   watchlists?: Prisma.WatchlistCreateNestedManyWithoutUserInput
 }
 
@@ -389,8 +343,6 @@ export type UserUncheckedCreateWithoutMoviesInput = {
   email: string
   name: string
   password: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
   watchlists?: Prisma.WatchlistUncheckedCreateNestedManyWithoutUserInput
 }
 
@@ -415,8 +367,6 @@ export type UserUpdateWithoutMoviesInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   watchlists?: Prisma.WatchlistUpdateManyWithoutUserNestedInput
 }
 
@@ -425,8 +375,6 @@ export type UserUncheckedUpdateWithoutMoviesInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   watchlists?: Prisma.WatchlistUncheckedUpdateManyWithoutUserNestedInput
 }
 
@@ -435,8 +383,6 @@ export type UserCreateWithoutWatchlistsInput = {
   email: string
   name: string
   password: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
   movies?: Prisma.MovieCreateNestedManyWithoutCreatorInput
 }
 
@@ -445,8 +391,6 @@ export type UserUncheckedCreateWithoutWatchlistsInput = {
   email: string
   name: string
   password: string
-  createdAt?: Date | string
-  updatedAt?: Date | string
   movies?: Prisma.MovieUncheckedCreateNestedManyWithoutCreatorInput
 }
 
@@ -471,8 +415,6 @@ export type UserUpdateWithoutWatchlistsInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   movies?: Prisma.MovieUpdateManyWithoutCreatorNestedInput
 }
 
@@ -481,8 +423,6 @@ export type UserUncheckedUpdateWithoutWatchlistsInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   movies?: Prisma.MovieUncheckedUpdateManyWithoutCreatorNestedInput
 }
 
@@ -531,8 +471,6 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   email?: boolean
   name?: boolean
   password?: boolean
-  createdAt?: boolean
-  updatedAt?: boolean
   movies?: boolean | Prisma.User$moviesArgs<ExtArgs>
   watchlists?: boolean | Prisma.User$watchlistsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
@@ -543,8 +481,6 @@ export type UserSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   email?: boolean
   name?: boolean
   password?: boolean
-  createdAt?: boolean
-  updatedAt?: boolean
 }, ExtArgs["result"]["user"]>
 
 export type UserSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -552,8 +488,6 @@ export type UserSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   email?: boolean
   name?: boolean
   password?: boolean
-  createdAt?: boolean
-  updatedAt?: boolean
 }, ExtArgs["result"]["user"]>
 
 export type UserSelectScalar = {
@@ -561,11 +495,9 @@ export type UserSelectScalar = {
   email?: boolean
   name?: boolean
   password?: boolean
-  createdAt?: boolean
-  updatedAt?: boolean
 }
 
-export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "email" | "name" | "password" | "createdAt" | "updatedAt", ExtArgs["result"]["user"]>
+export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "email" | "name" | "password", ExtArgs["result"]["user"]>
 export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   movies?: boolean | Prisma.User$moviesArgs<ExtArgs>
   watchlists?: boolean | Prisma.User$watchlistsArgs<ExtArgs>
@@ -585,8 +517,6 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     email: string
     name: string
     password: string
-    createdAt: Date
-    updatedAt: Date
   }, ExtArgs["result"]["user"]>
   composites: {}
 }
@@ -1016,8 +946,6 @@ export interface UserFieldRefs {
   readonly email: Prisma.FieldRef<"User", 'String'>
   readonly name: Prisma.FieldRef<"User", 'String'>
   readonly password: Prisma.FieldRef<"User", 'String'>
-  readonly createdAt: Prisma.FieldRef<"User", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"User", 'DateTime'>
 }
     
 
