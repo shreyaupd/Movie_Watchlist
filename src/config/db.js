@@ -1,4 +1,4 @@
-import { PrismaClient } from '../generated/client.ts';
+import { PrismaClient } from '../generated/client.js';
 import dotenv from 'dotenv';
 
 dotenv.config();

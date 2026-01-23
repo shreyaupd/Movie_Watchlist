@@ -3,12 +3,10 @@ generator client {
   output   = "../src/generated"
 }
 
-
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
-
 
 model Movie {
   id          Int         @id @default(autoincrement())
