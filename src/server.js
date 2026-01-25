@@ -3,6 +3,7 @@ import {config} from 'dotenv'; //
 import {connectDB,disconnectDB} from './config/db.js'; 
 import movieRoutes from './routes/movieRoutes.js';
 import authRoutes from './routes/authRoutes.js';
+import watchlistRoutes from './routes/watchlistRoutes.js';
 config(); 
 connectDB();
 const app= express();
@@ -11,6 +12,7 @@ app.use(express.urlencoded({extended:true}));
 const PORT=5001;
 app.use('/movies',movieRoutes);
 app.use('/auth',authRoutes);
+app.use('/watchlist',watchlistRoutes);
 app.get('/hello',(req,res)=>{
     res.json({message:"Hello, World!"});
 })

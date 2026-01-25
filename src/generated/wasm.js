@@ -180,7 +180,7 @@ const config = {
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": "../../.env",
+    "rootEnvPath": null,
     "schemaEnvPath": "../../.env"
   },
   "relativePath": "../../prisma",
@@ -199,8 +199,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"../src/generated\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Movie {\n  id          Int         @id @default(autoincrement())\n  title       String\n  description String?\n  releaseDate DateTime\n  createdAt   DateTime    @default(now())\n  updatedAt   DateTime    @updatedAt\n  createdBy   String\n  genere      String[]    @default([])\n  posterUrl   String?\n  runTime     Int\n  creator     User        @relation(\"MovieCreator\", fields: [createdBy], references: [id])\n  watchlists  Watchlist[]\n}\n\nmodel User {\n  id         String      @id @default(uuid())\n  email      String      @unique\n  name       String\n  password   String\n  movies     Movie[]     @relation(\"MovieCreator\")\n  watchlists Watchlist[]\n}\n\nmodel Watchlist {\n  id        Int             @id @default(autoincrement())\n  userId    String\n  movieId   Int\n  createdAt DateTime        @default(now())\n  updatedAt DateTime        @updatedAt\n  rating    Int?\n  review    String?\n  status    WatchlistStatus @default(PLANNED)\n  movie     Movie           @relation(fields: [movieId], references: [id], onDelete: Cascade)\n  user      User            @relation(fields: [userId], references: [id], onDelete: Cascade)\n}\n\nenum WatchlistStatus {\n  PLANNED\n  WATCHING\n  COMPLETED\n  ON_HOLD\n  DROPPED\n}\n",
-  "inlineSchemaHash": "709a647e3b9795f4b1f673779f440c460ae16ba73f2a48fa481988c53799a933",
+  "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"../src/generated\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Movie {\n  id          Int         @id @default(autoincrement())\n  title       String\n  description String?\n  releaseDate DateTime\n  createdAt   DateTime    @default(now())\n  updatedAt   DateTime    @updatedAt\n  createdBy   String\n  genere      String[]    @default([])\n  posterUrl   String?\n  runTime     Int\n  creator     User        @relation(\"MovieCreator\", fields: [createdBy], references: [id])\n  watchlists  Watchlist[]\n}\n\nmodel User {\n  id         String      @id @default(uuid())\n  email      String      @unique\n  name       String\n  password   String\n  movies     Movie[]     @relation(\"MovieCreator\")\n  watchlists Watchlist[]\n}\n\nmodel Watchlist {\n  id        Int             @id @default(autoincrement())\n  userId    String\n  movieId   Int\n  createdAt DateTime        @default(now())\n  updatedAt DateTime        @updatedAt\n  rating    Int?\n  review    String?\n  status    WatchlistStatus @default(PLANNED)\n  movie     Movie           @relation(fields: [movieId], references: [id], onDelete: Cascade)\n  user      User            @relation(fields: [userId], references: [id], onDelete: Cascade)\n\n  @@unique([userId, movieId])\n}\n\nenum WatchlistStatus {\n  PLANNED\n  WATCHING\n  COMPLETED\n  ON_HOLD\n  DROPPED\n}\n",
+  "inlineSchemaHash": "0d4358fdde82b72aa80aa4a4adc3c35d11e23638d72d877a998426e09dedd869",
   "copyEngine": true
 }
 config.dirname = '/'
