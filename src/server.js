@@ -13,7 +13,7 @@ const PORT=5001;
 app.use('/movies',movieRoutes);
 app.use('/auth',authRoutes);
 app.use('/watchlist',watchlistRoutes);
-app.get('/hello',(req,res)=>{
+app.get('/',(req,res)=>{
     res.json({message:"Hello, World!"});
 })
 app.listen(PORT,()=>{

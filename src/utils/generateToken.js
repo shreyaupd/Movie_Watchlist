@@ -12,7 +12,7 @@ dotenv.config({ path: path.resolve(process.cwd(), '../../.env') });
 
 // Function to generate token
 export const generateToken = (userId, res) => {
-    const payload = { id: userId }; // user identity
+    const payload = { id: userId }; // user identity 
     try {
         const token = jwt.sign(payload, process.env.JWT_SECRET, {
             expiresIn: process.env.JWT_EXPIRES || '7d'
