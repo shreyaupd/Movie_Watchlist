@@ -1,5 +1,6 @@
 import express from 'express';
-import {config} from 'dotenv'; //
+import {config} from 'dotenv';
+import cors from 'cors'; //
 import {connectDB,disconnectDB} from './config/db.js'; 
 import movieRoutes from './routes/movieRoutes.js';
 import authRoutes from './routes/authRoutes.js';
@@ -7,6 +8,10 @@ import watchlistRoutes from './routes/watchlistRoutes.js';
 config(); 
 connectDB();
 const app= express();
+app.use(cors({
+    origin: 'http://localhost:5173',
+    credentials: true,
+}))
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 const PORT=5001;
