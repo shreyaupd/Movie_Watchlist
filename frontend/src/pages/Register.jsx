@@ -30,7 +30,7 @@ const Register = () => {
          <div className='bg-gray-500 p-8 rounded-lg shadow-lg w-full max-w-md'>
          <h1 className='font-bold text-white text-3xl'>Register</h1>
           {error && (
-            <div className='text-red-500 mb-4'>{error}</div>
+            <div className='text-red-500 my-4'>{error}</div>
           )}
          <form onSubmit={handelSubmit}>
              <div className='my-4'>

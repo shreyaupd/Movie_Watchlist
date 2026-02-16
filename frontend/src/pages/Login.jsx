@@ -27,7 +27,7 @@ const Login = () => {
       <div className='bg-gray-500 p-8 rounded-lg shadow-lg w-full max-w-md'>
          <h1 className='font-bold text-white text-3xl'>Login</h1>
             {error && (
-                    <div className="bg-red-500 text-white p-3 rounded mb-4">
+                    <div className="bg-red-500 text-white p-3 rounded my-4">
                         {error}
                     </div>
                 )}

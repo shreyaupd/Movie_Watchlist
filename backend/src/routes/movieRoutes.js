@@ -1,7 +1,12 @@
 import express from 'express';
-const router= express.Router();
+import { getAllMovies, addMovie, getMovieById, deleteMovie } from '../controllers/movieController.js';
+import { authentication } from '../middleware/authMiddleware.js';
 
-router.get("/",(req,res)=>{
-    res.json({message:"Hello from movie routes!"});
-})
+const router = express.Router();
+
+router.get('/', getAllMovies);  // Public - get all movies
+router.get('/:id', getMovieById);  // Public - get single movie
+router.post('/add', authentication, addMovie);  // Protected - add movie
+router.delete('/:id', authentication, deleteMovie);  // Protected - delete movie
+
 export default router;

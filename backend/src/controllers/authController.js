@@ -33,7 +33,7 @@ res.status(201).json({message:"User registered successfully",
 }
 //login
 const login = async (req, res)=>{
-    const {email, password}= req.body;
+    const {email,name, password}= req.body;
     const userExists= await prisma.user.findUnique({
         where:{email:email}
     })
@@ -51,7 +51,9 @@ const login = async (req, res)=>{
         data:{
             user:{
                 id: userExists.id,
+                name: userExists.name,
                 email: email,
+                
             },
             token,
         }  

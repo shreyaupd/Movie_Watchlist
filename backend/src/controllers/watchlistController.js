@@ -1,4 +1,21 @@
 import { prisma } from "../config/db.js";
+
+const getWatchlist = async (req, res) => {
+  try {
+    const userId = req.user.id;
+    const watchlist = await prisma.watchlist.findMany({
+      where: { userId },
+      include: {
+        movie: true, // Include movie details
+      },
+    });
+    res.status(200).json({ data: watchlist });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
+
 const addToWatchlist = async (req, res) => {
   try {
     const { movieId, review, rating, status} = req.body;
@@ -117,4 +134,4 @@ const deleteFromWatchlist = async (req, res)=>{
     res.status(500).json({ error: "Internal server error" });
   }
 }
-export { addToWatchlist, updateWatchlist, deleteFromWatchlist };
+export { getWatchlist, addToWatchlist, updateWatchlist, deleteFromWatchlist };
