@@ -1,6 +1,6 @@
 import { api } from "../utils/axios";
 export const loginUser = (email, password) =>
-    api.post("/auth/login", { email,name, password });
+    api.post("/auth/login", { email, name, password });
 
 export const registerUser = (name, email, password) =>
     api.post("/auth/register", { name, email, password });

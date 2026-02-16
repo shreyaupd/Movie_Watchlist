@@ -1,5 +1,8 @@
 import { api } from "../utils/axios";
 
+export const getWatchlist = () =>
+    api.get("/watchlist");
+
 export const addToWatchlist = (movieId) =>
     api.post("/watchlist", { movieId });
 

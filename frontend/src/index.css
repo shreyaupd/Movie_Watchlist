@@ -1,1 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Bebas+Neue&display=swap');
 @import 'tailwindcss';
+
+:root {
+    --bg: #090b10;
+    --panel: rgba(18, 22, 30, 0.82);
+    --text: #f7f9fb;
+    --muted: #b2bccb;
+    --accent: #f6c453;
+    --accent-2: #59d3a7;
+    --danger: #c53b3b;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.font-display {
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.input-base {
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(0, 0, 0, 0.24);
+    color: var(--text);
+    border-radius: 0.75rem;
+    padding: 0.6rem 0.75rem;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.input-base:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(246, 196, 83, 0.2);
+}
+
+.input-base::placeholder {
+    color: var(--muted);
+}
