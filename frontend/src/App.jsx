@@ -25,7 +25,7 @@ const App = () => {
     return (
         <Routes>
             <Route path="/login" element={user ? <Navigate to="/" replace /> : <Login />} /> //replace is used to prevent going back to login page after successful login
-            <Route path="/register" element={user ? <Navigate to="/" replace /> : <Register />} />
+            <Route path="/register" element={user ? <Navigate to="/login" replace /> : <Register />} />
             <Route path="/" element={
                 <ProtectedRoute>
                     <Home />

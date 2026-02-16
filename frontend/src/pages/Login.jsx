@@ -8,7 +8,7 @@ const Login = () => {
   const [error, setError]= useState("")
   const { login } = useAuth();
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); 
     setError("");
     setLoading(true);
     try{
